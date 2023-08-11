@@ -111,11 +111,24 @@ svg {
 	color: var(--clr-neutral-3);
 }
 
+.bg-primary-1 {
+	background-color: var(--clr-primary-1);
+}
 .bg-neutral-1 {
-	color: var(--clr-neutral-1);
+	background-color: var(--clr-neutral-1);
 }
 .bg-neutral-2 {
-	color: var(--clr-neutral-2);
+	background-color: var(--clr-neutral-2);
+}
+.bg-neutral-3 {
+	background-color: var(--clr-neutral-3);
+}
+
+.ff-heading {
+	font-family: var(--ff-heading);
+}
+.ff-body {
+	font-family: var(--ff-body);
 }
 
 .fs-heading {
