@@ -7,7 +7,7 @@
 	--ff-heading: var(--ff-primary);
 	--ff-body: var(--ff-primary);
 
-	--fs-lg: 3rem;
+	--fs-lg: 2.8rem;
 	--fs-sm: 0.938rem;
 
 	--fs-heading: var(--fs-lg);
@@ -187,7 +187,7 @@ header > h1 {
 .rating-container {
 	width: 50%;
 	min-width: 564px;
-	padding: 2.5%;
+	padding: 2.5% 0 0;
 	display: grid;
 	grid-template-columns: 50px 50px repeat(5, 1fr);
 	grid-template-rows: repeat(3, auto);
@@ -227,7 +227,7 @@ header > h1 {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: 25px 25px 1fr;
-	gap: 0 3%;
+	gap: 0 2.5%;
 }
 
 .card {
@@ -279,9 +279,50 @@ header > h1 {
 	z-index: -1;
 }
 
-@media (min-width: 102em) and (max-width: 125em) {
-	:root {
-		--fs-lg: 3.55rem;
-		--fs-sm: 1.25rem;
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+	header {
+		min-width: 290px;
+	}
+
+	.rating-container {
+		width: 50%;
+		min-width: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		margin: auto 0 auto auto;
+	}
+	.rating-inner-container {
+		width: 100%;
+	}
+	.bottom {
+		grid-template-rows: 1fr;
+	}
+
+	.card {
+		height: 100%;
+	}
+	.card:first-child {
+		grid-row: 1;
+	}
+	.card:nth-child(2) {
+		grid-row: 1;
+	}
+	.card:last-child {
+		grid-row: 1;
+	}
+
+	@media screen and (min-width: 1600px) and (max-width: 2000px) {
+		:root {
+			--fs-lg: 3.55rem;
+			--fs-sm: 1.175rem;
+		}
+	}
+
+	@media (min-width: 2001px) {
+		:root {
+			--fs-lg: 5rem;
+			--fs-sm: 1.75rem;
+		}
 	}
 }
