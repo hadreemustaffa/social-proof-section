@@ -41,12 +41,6 @@
 	font: inherit;
 }
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
-	list-style: none;
-}
-
 /* Set core root defaults */
 html:focus-within {
 	scroll-behavior: smooth;
@@ -63,33 +57,12 @@ body {
 	line-height: 1.5;
 }
 
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-	text-decoration-skip-ink: auto;
-}
-
 /* Make images easier to work with */
 img,
 picture,
 svg {
 	max-width: 100%;
 	display: block;
-}
-
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-	html:focus-within {
-		scroll-behavior: auto;
-	}
-
-	*,
-	*::before,
-	*::after {
-		animation-duration: 0.01ms !important;
-		animation-iteration-count: 1 !important;
-		transition-duration: 0.01ms !important;
-		scroll-behavior: auto !important;
-	}
 }
 
 /* utility classes */
@@ -162,7 +135,7 @@ body {
 	position: relative;
 	font-family: var(--ff-body);
 	font-size: var(--fs-body);
-	overflow: auto;
+	overflow: hidden;
 }
 
 main {
@@ -201,6 +174,11 @@ header > h1 {
 	align-items: center;
 	gap: 5px;
 	border-radius: 10px;
+}
+.stars {
+	display: flex;
+	flex-direction: row;
+	gap: 5px;
 }
 .rating-text {
 	padding-left: 8%;
@@ -279,6 +257,115 @@ header > h1 {
 	z-index: -1;
 }
 
+@media screen and (max-width: 599px) {
+	:root {
+		--fs-lg: 2.25rem;
+		--fs-sm: 1.25rem;
+	}
+
+	body {
+		height: auto;
+		overflow-y: auto;
+	}
+
+	main {
+		min-height: 0;
+		width: 90vw;
+		margin: 72px auto;
+	}
+
+	.top {
+		margin: auto;
+		flex-direction: column;
+		gap: 48px;
+		padding-bottom: 56px;
+	}
+
+	header {
+		width: 100%;
+		text-align: center;
+	}
+	header > h1 {
+		padding-bottom: 5%;
+	}
+
+	.rating-container {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		margin: 0 auto;
+		min-width: 0;
+	}
+	.rating-inner-container {
+		flex-direction: column;
+		gap: 10px;
+	}
+	.rating-text {
+		padding: 0;
+	}
+
+	.bottom {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+}
+
+@media screen and (min-width: 600px) and (max-width: 899px) {
+	:root {
+		--fs-lg: 2.5rem;
+		--fs-sm: 1.5rem;
+	}
+
+	body {
+		height: auto;
+		overflow-y: auto;
+	}
+
+	main {
+		min-height: 0;
+
+		margin: 72px auto;
+	}
+
+	.top {
+		flex-direction: column;
+		gap: 48px;
+		padding-bottom: 56px;
+	}
+
+	header {
+		width: 80%;
+		text-align: center;
+		margin: auto;
+	}
+	header > h1 {
+		padding-bottom: 5%;
+	}
+
+	.rating-container {
+		width: 80%;
+		display: flex;
+		flex-direction: column;
+		margin: 0 auto;
+		min-width: 0;
+	}
+	.rating-inner-container {
+		flex-direction: column;
+		gap: 10px;
+	}
+	.rating-text {
+		padding: 0;
+	}
+
+	.bottom {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+}
+
 @media screen and (min-width: 900px) and (max-width: 1200px) {
 	header {
 		min-width: 290px;
@@ -315,7 +402,7 @@ header > h1 {
 	@media screen and (min-width: 1600px) and (max-width: 2000px) {
 		:root {
 			--fs-lg: 3.55rem;
-			--fs-sm: 1.175rem;
+			--fs-sm: 1.25rem;
 		}
 	}
 
