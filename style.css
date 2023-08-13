@@ -7,8 +7,8 @@
 	--ff-heading: var(--ff-primary);
 	--ff-body: var(--ff-primary);
 
-	--fs-lg: 2.8rem;
-	--fs-sm: 0.938rem;
+	--fs-lg: clamp(2.8rem, -0.028rem + 3.14vw, 5rem);
+	--fs-sm: clamp(0.938rem, -0.003rem + 1.04vw, 1.67rem);
 
 	--fs-heading: var(--fs-lg);
 	--fs-body: var(--fs-sm);
@@ -139,13 +139,11 @@ body {
 }
 
 main {
+	width: 80vw;
 	margin: auto;
 }
-
-.container {
-	width: 80vw;
-}
 .top {
+	margin: auto;
 	display: flex;
 	padding-bottom: 4%;
 	flex-direction: row;
@@ -184,8 +182,6 @@ header > h1 {
 	padding-left: 8%;
 }
 .rating-inner-container > img {
-	width: 15px;
-	height: 15px;
 	display: flex;
 }
 .rating-inner-container:first-child {
@@ -202,6 +198,7 @@ header > h1 {
 }
 
 .bottom {
+	margin: auto;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: 25px 25px 1fr;
@@ -257,10 +254,9 @@ header > h1 {
 	z-index: -1;
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 899px) {
 	:root {
-		--fs-lg: 2.25rem;
-		--fs-sm: 1.25rem;
+		--fs-lg: clamp(2.25rem, 1.95rem + 1.52vw, 2.8rem);
 	}
 
 	body {
@@ -270,20 +266,22 @@ header > h1 {
 
 	main {
 		min-height: 0;
-		width: 90vw;
+		width: 82vw;
+		max-width: 600px;
 		margin: 72px auto;
 	}
 
 	.top {
-		margin: auto;
 		flex-direction: column;
-		gap: 48px;
+		gap: 2rem;
 		padding-bottom: 56px;
 	}
 
 	header {
-		width: 100%;
+		width: 90%;
+		max-width: 400px;
 		text-align: center;
+		margin: auto;
 	}
 	header > h1 {
 		padding-bottom: 5%;
@@ -291,6 +289,7 @@ header > h1 {
 
 	.rating-container {
 		width: 100%;
+		max-width: 500px;
 		display: flex;
 		flex-direction: column;
 		margin: 0 auto;
@@ -306,60 +305,7 @@ header > h1 {
 
 	.bottom {
 		width: 100%;
-		display: flex;
-		flex-direction: column;
-		gap: 20px;
-	}
-}
-
-@media screen and (min-width: 600px) and (max-width: 899px) {
-	:root {
-		--fs-lg: 2.5rem;
-		--fs-sm: 1.5rem;
-	}
-
-	body {
-		height: auto;
-		overflow-y: auto;
-	}
-
-	main {
-		min-height: 0;
-
-		margin: 72px auto;
-	}
-
-	.top {
-		flex-direction: column;
-		gap: 48px;
-		padding-bottom: 56px;
-	}
-
-	header {
-		width: 80%;
-		text-align: center;
-		margin: auto;
-	}
-	header > h1 {
-		padding-bottom: 5%;
-	}
-
-	.rating-container {
-		width: 80%;
-		display: flex;
-		flex-direction: column;
-		margin: 0 auto;
-		min-width: 0;
-	}
-	.rating-inner-container {
-		flex-direction: column;
-		gap: 10px;
-	}
-	.rating-text {
-		padding: 0;
-	}
-
-	.bottom {
+		max-width: 500px;
 		display: flex;
 		flex-direction: column;
 		gap: 20px;
@@ -397,19 +343,5 @@ header > h1 {
 	}
 	.card:last-child {
 		grid-row: 1;
-	}
-
-	@media screen and (min-width: 1600px) and (max-width: 2000px) {
-		:root {
-			--fs-lg: 3.55rem;
-			--fs-sm: 1.25rem;
-		}
-	}
-
-	@media (min-width: 2001px) {
-		:root {
-			--fs-lg: 5rem;
-			--fs-sm: 1.75rem;
-		}
 	}
 }
