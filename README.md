@@ -21,7 +21,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/social-proof-section-using-flexbox-and-grid-241Qy_mBCv)
 - Live Site URL: [Github Pages](https://hadreemustaffa.github.io/social-proof-section/)
 
 ## My process
