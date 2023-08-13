@@ -178,11 +178,12 @@ header > h1 {
 	flex-direction: row;
 	gap: 5px;
 }
+.stars > img {
+	width: 17px;
+	height: 17px;
+}
 .rating-text {
 	padding-left: 8%;
-}
-.rating-inner-container > img {
-	display: flex;
 }
 .rating-inner-container:first-child {
 	grid-column: 1 / 6;
